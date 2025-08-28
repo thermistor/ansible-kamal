@@ -1,4 +1,4 @@
-![Current tag](https://img.shields.io/github/tag/thermistor/docker.svg)
+![Current tag](https://img.shields.io/github/tag/thermistor/ansible-kamal.svg)
 
 # kamal
 
