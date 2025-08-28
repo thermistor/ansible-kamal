@@ -7,7 +7,7 @@ An ansible role that preps a server for deploying with [kamal](https://kamal-dep
 It does the following:
 - installs `docker` package
 - adds ubuntu user to `docker` group
-- manages ssh keys for the unbuntu user
+- manages ssh keys for the ubuntu user
 
 ## Usage
 
