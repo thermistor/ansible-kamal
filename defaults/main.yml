@@ -1,0 +1,8 @@
+---
+kamal_shortname: sample_app
+kamal_env: staging
+kamal_user: ubuntu
+kamal_deployer_keys: []
+kamal_pkg_dependencies:
+  - docker.io
+  - curl

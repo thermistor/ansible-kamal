@@ -1,0 +1,28 @@
+---
+- name: Update the apt cache if older than 2 hrs
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 7200
+
+- name: Upgrade packages for security updates
+  ansible.builtin.apt:
+    upgrade: safe
+
+- name: Install kamal related packages
+  ansible.builtin.apt:
+    name: "{{ kamal_pkg_dependencies }}"
+    state: present
+
+- name: Add user {{ kamal_user }} to docker group
+  ansible.builtin.user:
+    name: "{{ kamal_user }}"
+    groups: docker
+    append: true
+
+- name: Install the authorized keys for {{ kamal_shortname }} deployers
+  ansible.posix.authorized_key:
+    user: "{{ kamal_user }}"
+    key: "{{ kamal_deployer_keys | join('\n') }}"
+    exclusive: true
+  tags:
+    - security
