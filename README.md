@@ -14,6 +14,8 @@ It does the following:
     roles:
       - role: thermistor.kamal
         kamal_shortname: sample_app
+        kamal_deployer_keys:
+          - "{{ lookup('file', 'files/ssh_keys/sample_key.pub') }}"
 
 ## Vars
 
