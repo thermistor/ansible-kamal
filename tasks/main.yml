@@ -13,6 +13,7 @@
     name: "{{ kamal_pkg_dependencies }}"
     state: present
 
+# FIXME: this effectively gives that user root anyway however
 - name: Add user {{ kamal_user }} to docker group
   ansible.builtin.user:
     name: "{{ kamal_user }}"
